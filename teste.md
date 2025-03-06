@@ -30,3 +30,7 @@ dar um *comi* para avisar a equipe da remoção, e depois um push para deletalo 
 ## Ignorando Arquivos e Diretórios no Projeto
 
 Para ignorarmos arquivos no projeto, criamos um arquivo **.gitignore** na pasta de nosso projeto e especificamos dentro dela os arquivos que devem ser ignorados, isto é, não devem ser enviados para o servidor junto com os comits. 
+
+## Desfazendo Todas as Alterações
+
+Como o comando **git reset** podemos resetar todas as mudanlças feitas na branch atual, inclusive as já comitadas. Geralmente ele é utilizado com a flag **--hard**. Temos também que colocar a branch na qual queremos ficar pareados, geralmente é a main. Sua sintaxe é **git reset --hard "branch para parear"**
