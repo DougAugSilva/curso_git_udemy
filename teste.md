@@ -41,6 +41,13 @@ Branchs separam versões do projeto, quando o prokjeto é criado ele se inicia c
 
  - **git branch**: Visualiza as branches disponiveis.
 
- - **git branch <"nome da branch">**: Cria uma nova branch no projeto.
+ - **git branch "nome da branch"**: Cria uma nova branch no projeto.
 
- 
+ - **-d** ou **--delete**: Utuilizado para deletar branchs por medidas de organização, ou foram criados errados. Sua sintaxe é *git -d "nome da branch"*.
+
+ - **git checkout -b "nome da branch**: É utilizada para mudarmos para outra branch. Tome cuidado, alterar de branch pode levar os arquivos que não foram comitadados junto, sendo que eles vão para o novo branch e não ficam no anterior.
+ A tag *-b* alem de mudar, cria no novo branch.
+
+ - **git merge "nome da branch**: Faz a união da branch artual com uma branch especifica, ganhando assim as funcionalidades dela.
+
+ **OBS**: Geralmente sempre utilize o *merge* para atualizar a sua branch com relação a master, e nunca ao contrário. O envio de funcionalidades para a master se dará no módulo sobre GitHub.
