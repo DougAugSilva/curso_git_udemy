@@ -36,7 +36,7 @@ Como o comando **git reset** podemos resetar todas as mudanlças feitas na branc
 ## Trabalhando com Branches
 Branchs separam versões do projeto, quando o prokjeto é criado ele se inicia com a branch main (ou master). Gralmente uma nova feature de um projeto fica em uma branch separada. Após as alterações na brach serem finalizadas, os branchs são unidos a master para termos o código-fonte final.
 
-### Criando Branches
+### Criando e Manipulando Branches
  Os seguintes comandos são muito utilizados no dia a dia de um desenvolvedor para se lidar com as branches.
 
  - **git branch**: Visualiza as branches disponiveis.
@@ -51,3 +51,33 @@ Branchs separam versões do projeto, quando o prokjeto é criado ele se inicia c
  - **git merge "nome da branch**: Faz a união da branch artual com uma branch especifica, ganhando assim as funcionalidades dela.
 
  **OBS**: Geralmente sempre utilize o *merge* para atualizar a sua branch com relação a master, e nunca ao contrário. O envio de funcionalidades para a master se dará no módulo sobre GitHub.
+
+ ### Trabalhando com o Git Stash
+ A *Stash* funciona como se fosse a *lixeira* do git, podemos mandar branches para ela e recuperalas depois se necessario
+
+ - **git stash**: Deleta nossa brach toda e volta ó código para o estado da branch anterior.
+
+ - **git stash list**: Lista os elementos presentes na stash, numerados de 0 em diante.
+
+ - **git stash aply "numero do item na stash"**: Recupera um elemento específico da stash.
+
+- **git stash show -p "numero da stash"**: Mostra quais alterações forma feitas pela aquela stash.
+
+- **git stash clear**: Limpa nossa stash deletando todos os itens.
+
+- **git stash drop "nome do item"**: Deleta um item especifico da stash.
+
+### Utilizando Tags no Git
+A tag é diferente da stash, uma tag serve de cheackpoint de uma branch, sendo utilizada para demarcar estágios do desenvolvimento de algum recurso.
+
+- **git tag -a "nome da tag" -m "mensagem"**: Cria uma tag em uma brach.
+
+- **git show "nome da tag"**: Podemos verificar os detalhes da tag.
+
+- **git checkout "nome"**: Mudamos de uma tag para outra, deste modo é possivel retrocedermos ou avançarmnos em cheackpoints de uma branch.
+
+**OBS**: Também podemos enviar tags para o repositório do servidor, para isso utilizamos os seguintes comandos.
+
+- **git push origin "nome da tag"**: Compartilha uma tag para o repositório.
+
+- **git push origin --tags**: Envia várias tags para o repoisitório.
