@@ -81,3 +81,25 @@ A tag é diferente da stash, uma tag serve de cheackpoint de uma branch, sendo u
 - **git push origin "nome da tag"**: Compartilha uma tag para o repositório.
 
 - **git push origin --tags**: Envia várias tags para o repoisitório.
+
+- **git remote**: Mudamos a Url de origem do repositório, podendo assim mudarmos de seviço de ospedagem do repositório sem precisar fazer toda a clonagem deste. Por exemplo, mudar do GitHub para o Bitbucket.
+
+  - **git remote -v**: Mostra quais são os repositórios de origem de recebimento e envio.
+
+  - **git remote rm origin**: Remove as origens.
+
+  - **git remote origin "link repositorio"**: Adiciona um repositório de origem.
+
+### Diferenças git fetch e git pull
+- **git pull**: Tenta mesclar automaticamente após buscar os commits. Ele é sensível ao contexto, então todos os commits puxados serão mesclados em seu branch ativo no momento. git pull mescla os commits automaticamente sem deixar você revisá-los primeiro. Se você não gerenciar seus branches cuidadosamente, poderá ter conflitos frequentes.
+
+- **git fetch**: Reúne todos os commits do branch de destino que não existem no branch atual e os armazena em seu repositório local. No entanto, ele não os mescla com seu branch atual. Isso é particularmente útil se você precisa manter seu repositório atualizado, mas está trabalhando em algo que pode quebrar se você atualizar seus arquivos. Para integrar os commits em seu branch atual, você deve usar git merge depois.
+
+### Submodulos no git
+Podemos adicionar mais de um repositório em um projeto, suponha por exemplo que em uma empresa com varios setores, tenhamos um grande projeto com cada setor possuindo um repositório, podemos assim adicionar cada repositório como submódulo do projeto.
+
+- **git submodule**: Verifica os submódulos do projeto.
+
+- **git submodule add "link do repositório"**: Adiciona o novo repositório ao projeto como uma pasta. 
+
+**OBS**: Para atualizarmos e trabalharmos com o submodulo, basta irmos até a pasta do submódulo com o comando *cd*, sendo que as atualizações vão para a origem deste submódulo.
