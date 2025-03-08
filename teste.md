@@ -103,3 +103,32 @@ Podemos adicionar mais de um repositório em um projeto, suponha por exemplo que
 - **git submodule add "link do repositório"**: Adiciona o novo repositório ao projeto como uma pasta. 
 
 **OBS**: Para atualizarmos e trabalharmos com o submodulo, basta irmos até a pasta do submódulo com o comando *cd*, sendo que as atualizações vão para a origem deste submódulo.
+
+- **git push --recurse-submodules=on-demand**: Atualiza as mudanças comitadas para o repositório de origem do submódulo.
+
+## Análise e inspeção de repositórios
+
+- **git show**: Ele nos da informações sobre o nosso branch atual, como por exemplo os comits. As modificações de arquivos entre os comits também serão exibidas.
+
+- **git diff**: Quando utilizado as diferenças do branch atual com o remoto serão exibidas no terminal. Podemos também verificar a diferença entre arquivos com o **git diff "arquivo_a" "arquivo_b"**. 
+Se colocarmos **git diff "branch especifica"**, verificamos a diferença só naquela branch para com o repositório.
+
+**OBS**: Note que depois de um merge, se fizermos **git diff**, a diferença dos dois brancs será nenhuma.
+
+- **git shortlog**: Nos dá um log resumido do projeto, sendo que cada commit se´ra exibido junto com o nome do autor. Podemos assim saber quais commits foram enviados ao projeto e por que.
+
+## Administração de repositório
+
+- **git clean -f**: Verifica e limpa todos os arquivos que não estão sendo trackeados, isto é, todos os arquivos que *não se utilizou o git add*.
+É utilizado, por exemplo, para arquivos que são gerados automaticamente, e atrapalham assim a visualização do que é realmente importante.
+
+- **git gc**: Abreviação de *garbage collector*, ele indentifica arquivos que não são mais necessários e os exclui, isso fará com que mais optimizado em questões de performance. Se recomenda utilizar pouco, por exemplo, uma vez no mês.
+
+- **git fsck**: É uma abreviação de *File System Check*, esta função verifica a integridade de arquivos e suas conectividades, buscando assim possíveis corrupções de arquivos. É um comando de rotina assim como o git gc, utilizado para ver se está tudo certo com nossos arquivos.
+
+- **git reflog**: Vai mapear todos os seus passos em um repositório, até uma mudança de branch é inserida neste log. Ele é diferente do *git log* que só armazena commits de uma branch.
+Os reflogs ficam salvos até expirarem, o tempo de expiração padrão é de 30 dias.
+
+**OBS**: Podemos nos mover dentro dos passos salvos pelo reaflog utilizando o comando reset, assim voltando o código a estados anterios e desfazendo erros, por exemplo.
+
+- **git archive**: Transforma o repositório em um arquivo compacto, por exemplo, **git archive --format zip --output main_files.zip main**, trasforma a main em um arquivo zipado de nome *main_files.zip*.
